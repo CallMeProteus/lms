@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+{% block title %}
+    {% if title %}
+        <title>{{title}} | LMS</title> 
+    {% else %}
+        <title>LMS</title>
+    {% endif %}
+{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+    
+</head>
+
+<body>
+
+<div class="container-fluid">
+    
+    <!-- NAVIGATION BAR -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex justify-content-around px-5 mx-auto" style="width: 80%;">
+            
+
+            <ul class="navbar-nav mt-5 mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="{% url 'content:all' %}">Content</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link active" href="{% url 'assignments:all' %}">Assignments</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="{% url 'quizes:all' %}">Quizes</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="{% url 'announcements:all' %}">Announcements</a>
+                </li>
+                
+                <!-- 
+                ##
+                ## UNCOMMENT THESE LINES IF YOU HAVE A FUNCTIONAL CRUD FOR THE GENRE MODEL 
+                ## CHANGE ALSO THE URL INFO 'films:all' to 'films:genre_all'     
+                
+            
+
+                -->
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- END OF NAVIGATION BAR -->
+
+</div>
+
+{% block content %}
+{% endblock content %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<style>
+    li a{
+       font-size: 1.6em;
+       font-weight: bold; 
+        color: blueviolet;
+        font-family: sans-serif;
+        margin: 10px;
+
+    }
+</style>
+</html>
